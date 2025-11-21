@@ -386,67 +386,67 @@
 
     <script>
 
-        // const arena = document.getElementById('arena');
-        // let returning = false;
-        // let targetScrollX = 0;
-        // let targetScrollY = 0;
-        // let liaEnabled = true; // ✅ trạng thái lia chuột
+        const arena = document.getElementById('arena');
+        let returning = false;
+        let targetScrollX = 0;
+        let targetScrollY = 0;
+        let liaEnabled = true; // ✅ trạng thái lia chuột
 
-        // const speed = 25;
-        // const edgeZone = 100;
-        // const lerpFactor = 0.4;
+        const speed = 25;
+        const edgeZone = 100;
+        const lerpFactor = 0.4;
 
-        // function updateScroll() {
-        //     if (liaEnabled) {
-        //         // chỉ cập nhật vị trí khi lia bật
-        //         arena.scrollLeft += (targetScrollX - arena.scrollLeft) * lerpFactor;
-        //         arena.scrollTop += (targetScrollY - arena.scrollTop) * lerpFactor;
-        //     }
-        //     requestAnimationFrame(updateScroll);
-        // }
-        // updateScroll();
+        function updateScroll() {
+            if (liaEnabled) {
+                // chỉ cập nhật vị trí khi lia bật
+                arena.scrollLeft += (targetScrollX - arena.scrollLeft) * lerpFactor;
+                arena.scrollTop += (targetScrollY - arena.scrollTop) * lerpFactor;
+            }
+            requestAnimationFrame(updateScroll);
+        }
+        updateScroll();
 
-        // // Lia chuột khi di trong khung
-        // arena.addEventListener('mousemove', e => {
-        //     if (!liaEnabled || returning) return;
+        // Lia chuột khi di trong khung
+        arena.addEventListener('mousemove', e => {
+            if (!liaEnabled || returning) return;
 
-        //     const rect = arena.getBoundingClientRect();
-        //     const { clientX, clientY } = e;
+            const rect = arena.getBoundingClientRect();
+            const { clientX, clientY } = e;
 
-        //     if (clientX > rect.right - edgeZone) targetScrollX += speed;
-        //     else if (clientX < rect.left + edgeZone) targetScrollX -= speed;
+            if (clientX > rect.right - edgeZone) targetScrollX += speed;
+            else if (clientX < rect.left + edgeZone) targetScrollX -= speed;
 
-        //     if (clientY > rect.bottom - edgeZone) targetScrollY += speed;
-        //     else if (clientY < rect.top + edgeZone) targetScrollY -= speed;
+            if (clientY > rect.bottom - edgeZone) targetScrollY += speed;
+            else if (clientY < rect.top + edgeZone) targetScrollY -= speed;
 
-        //     targetScrollX = Math.max(0, Math.min(targetScrollX, arena.scrollWidth - arena.clientWidth));
-        //     targetScrollY = Math.max(0, Math.min(targetScrollY, arena.scrollHeight - arena.clientHeight));
-        // });
+            targetScrollX = Math.max(0, Math.min(targetScrollX, arena.scrollWidth - arena.clientWidth));
+            targetScrollY = Math.max(0, Math.min(targetScrollY, arena.scrollHeight - arena.clientHeight));
+        });
 
-        // // Cập nhật target theo vị trí hiện tại khi người dùng cuộn tay
-        // arena.addEventListener('scroll', () => {
-        //     if (!liaEnabled) {
-        //         targetScrollX = arena.scrollLeft;
-        //         targetScrollY = arena.scrollTop;
-        //     }
-        // });
+        // Cập nhật target theo vị trí hiện tại khi người dùng cuộn tay
+        arena.addEventListener('scroll', () => {
+            if (!liaEnabled) {
+                targetScrollX = arena.scrollLeft;
+                targetScrollY = arena.scrollTop;
+            }
+        });
 
-        // // Space = quay về gốc
-        // document.addEventListener('keydown', e => {
-        //     if (e.code === 'Space') {
-        //         e.preventDefault();
-        //         returning = true;
-        //         targetScrollX = 0;
-        //         targetScrollY = 0;
-        //         setTimeout(() => returning = false, 500);
-        //     }
+        // Space = quay về gốc
+        document.addEventListener('keydown', e => {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                returning = true;
+                targetScrollX = 0;
+                targetScrollY = 0;
+                setTimeout(() => returning = false, 500);
+            }
 
-        //     // L = bật/tắt lia
-        //     if (e.key.toLowerCase() === 'a') {
-        //         liaEnabled = !liaEnabled;
-        //         console.log('Lia map:', liaEnabled ? 'BẬT' : 'TẮT');
-        //     }
-        // });
+            // L = bật/tắt lia
+            if (e.key.toLowerCase() === 'a') {
+                liaEnabled = !liaEnabled;
+                console.log('Lia map:', liaEnabled ? 'BẬT' : 'TẮT');
+            }
+        });
 
 
     </script>

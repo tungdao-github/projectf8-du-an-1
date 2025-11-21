@@ -133,9 +133,8 @@ a {
     color: #687690;
     font-family: Poppins;
     font-size: 18px;
-    font-style: normal;
     font-weight: 500;
-    line-height: normal;
+
     letter-spacing: 0.18px;
 }
 
@@ -415,7 +414,7 @@ ul.list-guides a.link-cta {
     color: var(--primary-text-color);
 }
 
-.list .item .sub-title {
+.featur .list .item .sub-title {
     /* --line-clamp: 3; */
     margin-top: 11px;
     font-weight: 500;
