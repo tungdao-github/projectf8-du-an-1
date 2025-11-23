@@ -19,6 +19,7 @@ body {
 }
 
 main {
+    /* width: 1440p */
     position: relative;
 }
 
@@ -71,16 +72,19 @@ a {
 
 /* navbar  */
 .fixed-header {
-    /* width: 100vw; */
+    width: 100vw;
     padding-top: 24px;
     /* background: green; */
     position: sticky;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* position: relative; */
     /* z-index: 999; */
     z-index: 1;
     top: -24px;
     /* left: 50%;
+
     transform: translateX(-50%); */
     background: #E6F0FF;
 }
@@ -161,7 +165,7 @@ a {
 
 .hero .info {
     /* width: 51%; */
-    width: 553px;
+    width: 559px;
 }
 
 
