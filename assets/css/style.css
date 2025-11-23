@@ -217,6 +217,7 @@ a {
     margin-left: 67px;
     position: absolute;
     bottom: 0;
+
     /* right: 65px; */
     right: calc((1440px - 1110px) / 2 - 100px);
 }
